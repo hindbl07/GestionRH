@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using GestionRH.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        @* Récupération de l'utilisateur actuel *@
+        var user = UserManager.GetUserAsync(User).Result;
+
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Account" asp-action="Profile" title="Gérer" class="bi bi-box-arrow-right"> Bonjour @user?.Nom!</a>
+        </li>
+       
+        
+
+        <li class="nav-item">
+
+            <form class="form-inline" asp-controller="Account" asp-action="Logout" method="post">
+                <button type="submit"  class="bi bi-box-arrow-right"> Se déconnecter</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Inscription</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Connexion</a>
+        </li>
+    }
+</ul>

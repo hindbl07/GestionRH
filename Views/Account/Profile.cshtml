@@ -1,0 +1,33 @@
+﻿@model GestionRH.Models.ViewModels.ProfileViewModel
+@{
+    ViewData["Title"] = "Mon Profil";
+    var userName = ViewData["UserName"];
+}
+
+<h2>Profil de l'utilisateur</h2>
+<p>Bonjour, @userName !</p>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+}
+
+<form asp-action="Profile" method="post">
+    <div class="form-group">
+        <label asp-for="Nom"></label>
+        <input asp-for="Nom" class="form-control" />
+        <span asp-validation-for="Nom" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PhoneNumber"></label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
