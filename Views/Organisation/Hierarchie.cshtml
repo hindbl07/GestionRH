@@ -1,0 +1,133 @@
+﻿@model GestionRH.Models.ViewModels.HierarchieViewModel
+
+@{
+    ViewData["Title"] = "Hiérarchie des départements";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+<style>
+    .hierarchie-container {
+        max-width: 900px;
+        margin: auto;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .departement-card, .poste-card {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        padding: 10px;
+        background: #f5f7fa;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .poste-card {
+        background: #e9f3ff;
+        margin-left: 30px;
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px 10px;
+        font-weight: bold;
+        font-size: 16px;
+        transition: background 0.3s;
+    }
+
+        .card-header:hover {
+            background: #eef1f5;
+            border-radius: 5px;
+        }
+
+    .icon {
+        margin-right: 8px;
+        color: #2d89ef;
+    }
+
+    .toggle-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .expanded .toggle-icon {
+        transform: rotate(180deg);
+    }
+
+    .children {
+        margin-top: 10px;
+        padding-left: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .employe-card {
+        background: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        border-left: 4px solid #2d89ef;
+        margin-bottom: 5px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+        .employe-card .icon {
+            margin-right: 6px;
+            color: #444;
+        }
+</style>
+
+<h2 style="text-align:center; margin-bottom:30px;">👥 Hiérarchie des départements</h2>
+
+<div class="hierarchie-container">
+    @foreach (var departement in Model.Departements)
+    {
+        <div class="departement-card">
+            <div class="card-header" onclick="toggleChildren(this)">
+                <i class="fas fa-building icon"></i>
+                <span>@departement.Nom</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="children hidden">
+                @foreach (var poste in departement.Postes)
+                {
+                    <div class="poste-card">
+                        <div class="card-header" onclick="toggleChildren(this)">
+                            <i class="fas fa-briefcase icon"></i>
+                            <span>@poste.Titre</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="children hidden employes-list">
+                            @foreach (var employe in poste.Employes)
+                            {
+                                <div class="employe-card">
+                                    <i class="fas fa-user icon"></i> @employe.NomComplet
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    function toggleChildren(element) {
+        const card = element.parentElement;
+        const children = element.nextElementSibling;
+
+        if (children) {
+            children.classList.toggle("hidden");
+            element.classList.toggle("expanded");
+        }
+    }
+</script>
+

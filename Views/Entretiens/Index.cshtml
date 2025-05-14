@@ -1,59 +1,60 @@
 ﻿@model IEnumerable<GestionRH.Models.Entretien>
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml"; // C'est ça la clé !
+    ViewData["Title"] = "Liste des entretiens";
 }
 
-<h1>Index</h1>
+@section CustomAlert {
+    @if (TempData["EntretienCree"] != null)
+    {
+        <div class="alert alert-success">
+            Entretien créé : <strong>@TempData["EntretienCree"]</strong>
+        </div>
+    }
+}
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+@section TopActions {
+    <a asp-action="Create" class="btn btn-success">
+        <i class="fas fa-user-plus"></i> Ajouter un entretien
+    </a>
+}
+
+@section Filters {
+    <form method="get" asp-action="Index" class="row g-3">
+        <!-- champs de filtre ici -->
+    </form>
+}
+
+<!-- Le tableau des données -->
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Lieu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Resultat)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Candidat)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Utilisateur)
-            </th>
-            <th></th>
+            <th>Date</th>
+            <th>Lieu</th>
+            <th>Resultat</th>
+            <th>Candidat</th>
+            <th>Utilisateur</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
+                <td>@item.Date</td>
+                <td>@item.Lieu</td>
+                <td>@item.Resultat</td>
+                <td>@item.Candidat.Email</td>
+                <td>@item.Utilisateur.Nom</td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lieu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Resultat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Candidat.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Utilisateur.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <div class="btn-group">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+                </div>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

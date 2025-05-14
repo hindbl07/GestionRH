@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
 namespace GestionRH.Models
@@ -20,14 +21,16 @@ namespace GestionRH.Models
         [Precision(18, 2)]
         public decimal SalaireBase { get; set; }
 
+
+        // ✅ Lien vers le Département
+        public int? DepartementId { get; set; }  // plus nullable maintenant
+        
+        [ForeignKey("DepartementId")]
+        public Departement? Departement { get; set; }
+
         public ICollection<Employe> Employes { get; set; } = new List<Employe>(); // Un poste peut être occupé par plusieurs employés
 
         public Poste() { } // constructeur vide
-        public Poste(string titre, string description, decimal salaireBase)
-        {
-            Titre = titre;
-            Description = description;
-            SalaireBase = salaireBase;
-        }
+       
     }
 }

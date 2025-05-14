@@ -1,0 +1,35 @@
+﻿@model GestionRH.Models.DemandeConge
+@{
+    ViewData["Title"] = "Créer une demande de congé";
+}
+
+<h2>@ViewData["Title"]</h2>
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="EmployeId" class="control-label">Employé</label>
+        <select asp-for="EmployeId" class="form-control" asp-items="@(ViewData["EmployeId"] as SelectList)">
+            <option value="">-- Sélectionner un employé --</option>
+        </select>
+        <span asp-validation-for="EmployeId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateDebut" class="control-label"></label>
+        <input asp-for="DateDebut" class="form-control" />
+        <span asp-validation-for="DateDebut" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateFin" class="control-label"></label>
+        <input asp-for="DateFin" class="form-control" />
+        <span asp-validation-for="DateFin" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Créer</button>
+    <a asp-action="Index" class="btn btn-secondary">Retour</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

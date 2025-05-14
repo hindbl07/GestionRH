@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GestionRH.Data;
 using GestionRH.Models;
+using System.Text;
 
 namespace GestionRH.Controllers
 {
@@ -20,11 +21,44 @@ namespace GestionRH.Controllers
         }
 
         // GET: Employes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string search, int? departementId, int? posteId)
         {
-            var applicationDbContext = _context.Employes.Include(e => e.Departement).Include(e => e.Poste);
-            return View(await applicationDbContext.ToListAsync());
+            var query = _context.Employes
+                .Include(e => e.Departement)
+                .Include(e => e.Poste)
+                .AsQueryable();
+
+            // 🔍 Recherche libre
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                query = query.Where(e =>
+                    e.Nom.Contains(search) ||
+                    e.EmailPro.Contains(search) ||
+                    e.Matricule.Contains(search) ||
+                    e.Poste.Titre.Contains(search) ||
+                    e.Departement.Nom.Contains(search));
+            }
+
+            // 📂 Filtre par département
+            if (departementId.HasValue)
+            {
+                query = query.Where(e => e.DepartementId == departementId.Value);
+            }
+
+            // 💼 Filtre par poste
+            if (posteId.HasValue)
+            {
+                query = query.Where(e => e.PosteId == posteId.Value);
+            }
+
+            // Pour les menus déroulants dans la vue
+            ViewData["DepartementId"] = new SelectList(_context.Departements, "Id", "Nom", departementId);
+            ViewData["PosteId"] = new SelectList(_context.Postes, "Id", "Titre", posteId);
+            ViewData["Search"] = search;
+
+            return View(await query.ToListAsync());
         }
+
 
         // GET: Employes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -66,7 +100,7 @@ namespace GestionRH.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nom,Matricule,EmailPro,DateEmbauche,DepartementId,PosteId")] Employe employe)
+        public async Task<IActionResult> Create([Bind("Nom,Matricule,EmailPro,DateEmbauche,Statut,DepartementId,PosteId")] Employe employe)
         {
 
             Console.WriteLine("Données reçues : ");
@@ -132,7 +166,7 @@ namespace GestionRH.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nom,Matricule,EmailPro,DateEmbauche,DepartementId,PosteId")] Employe employe)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nom,Matricule,EmailPro,DateEmbauche,Statut,DepartementId,PosteId")] Employe employe)
         {
             if (id != employe.Id)
             {
@@ -210,6 +244,25 @@ namespace GestionRH.Controllers
             Console.WriteLine("Matricule généré : " + matricule); // maintenant c'est OK
 
             return matricule;
+        }
+
+        // Action Export CSV
+        public async Task<IActionResult> ExportCsv()
+        {
+            var employes = await _context.Employes
+                .Include(e => e.Departement)
+                .Include(e => e.Poste)
+                .ToListAsync();
+
+            var builder = new StringBuilder();
+            builder.AppendLine("Nom,Matricule,EmailPro,DateEmbauche,Statut,Departement,Poste");
+
+            foreach (var e in employes)
+            {
+                builder.AppendLine($"{e.Nom},{e.Matricule},{e.EmailPro},{e.DateEmbauche:yyyy-MM-dd},{e.Statut};{e.Departement.Nom},{e.Poste.Titre}");
+            }
+
+            return File(Encoding.UTF8.GetBytes(builder.ToString()), "text/csv", "employes.csv");
         }
         private bool EmployeExists(int id)
         {

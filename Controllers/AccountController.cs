@@ -12,11 +12,13 @@ namespace GestionRH.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
         // --- LOGIN ---
@@ -61,23 +63,59 @@ namespace GestionRH.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
+            // Nom du rôle par défaut
+            var defaultRole = "Admin";
+
+            // Vérifie si le rôle "Admin" existe
+            var roleExists = await _roleManager.RoleExistsAsync(defaultRole);
+
+            // Si le rôle n'existe pas, on le crée
+            if (!roleExists)
+            {
+                var roleCreationResult = await _roleManager.CreateAsync(new IdentityRole(defaultRole));
+
+                if (!roleCreationResult.Succeeded)
+                {
+                    // Si la création du rôle échoue, ajouter les erreurs et retourner à la vue
+                    foreach (var error in roleCreationResult.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return View(model);
+                }
+            }
+
+            // Créer un nouvel utilisateur
             var user = new ApplicationUser
             {
                 UserName = model.Email,
                 Email = model.Email,
                 Nom = model.Nom
-                // Ajoute ici d'autres champs personnalisés si nécessaires
             };
 
-            var result = await _userManager.CreateAsync(user, model.Password);
-
-            if (result.Succeeded)
+            // Créer l'utilisateur avec son mot de passe
+            var userCreationResult = await _userManager.CreateAsync(user, model.Password);
+            if (userCreationResult.Succeeded)
             {
+                // Assigner le rôle "Admin" à l'utilisateur
+                var addRoleResult = await _userManager.AddToRoleAsync(user, defaultRole);
+                if (!addRoleResult.Succeeded)
+                {
+                    // Si l'ajout du rôle échoue, ajouter les erreurs et retourner à la vue
+                    foreach (var error in addRoleResult.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return View(model);
+                }
+
+                // Connecter l'utilisateur après sa création
                 await _signInManager.SignInAsync(user, isPersistent: false);
                 return RedirectToAction("Index", "Home");
             }
 
-            foreach (var error in result.Errors)
+            // Si la création de l'utilisateur échoue, ajouter les erreurs et retourner à la vue
+            foreach (var error in userCreationResult.Errors)
             {
                 ModelState.AddModelError(string.Empty, error.Description);
             }

@@ -1,4 +1,4 @@
-namespace GestionRH.Models
+namespace GestionRH.Models.ViewModels
 {
     public class ErrorViewModel
     {

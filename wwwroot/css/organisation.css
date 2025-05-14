@@ -1,0 +1,40 @@
+﻿<style >
+.tree {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding-left: 10px;
+    border-left: 3px solid #ccc;
+}
+
+.node {
+    margin-bottom: 10px;
+}
+
+.toggle {
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+    .toggle i {
+        margin-right: 8px;
+        transition: transform 0.3s ease;
+    }
+
+.children {
+    margin-left: 20px;
+    list-style-type: none;
+    padding-left: 10px;
+    border-left: 2px dashed #ddd;
+}
+
+.hidden {
+    display: none;
+}
+
+.expanded > .toggle i {
+    transform: rotate(90deg);
+}
+
+</style >

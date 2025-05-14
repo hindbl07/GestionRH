@@ -1,59 +1,82 @@
 ﻿@model IEnumerable<GestionRH.Models.Candidat>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Liste des Candidats";
 }
 
-<h1>Index</h1>
+<h2 class="mb-4">
+    <i class="fas fa-users"></i> Liste des Candidats
+</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+<div class="mb-3 d-flex justify-content-between">
+    <a asp-action="Create" class="btn btn-success">
+        <i class="fas fa-user-plus"></i> Créer un nouveau candidat
+    </a>
+    <a asp-action="ExportCsv" class="btn btn-outline-primary">
+        <i class="fas fa-file-csv"></i> Exporter les candidats
+    </a>
+</div>
+
+<table class="table table-hover table-bordered text-center align-middle">
+    <thead class="table-light">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CV)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Statut)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employe)
-            </th>
-            <th></th>
+            <th>@Html.DisplayNameFor(model => model.Nom)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>CV</th>
+            <th>@Html.DisplayNameFor(model => model.Statut)</th>
+            <th>Matricule Employé</th>
+            <th>Action Statut</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CV)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Statut)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Employe.Matricule)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nom)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.CV)</td>
+                <td>@Html.DisplayFor(modelItem => item.Statut)</td>
+                <td>
+                    @if (item.Employe != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Employe.Matricule)
+                    }
+                    else
+                    {
+                        <span class="text-muted">-</span>
+                    }
+                </td>
+                <td>
+                    @if (item.Statut == "Accepté" && item.EmployeId == null)
+                    {
+                        <a asp-action="Transformer" asp-route-id="@item.Id" class="btn btn-sm btn-success">
+                            <i class="fas fa-user-check"></i> Transformer
+                        </a>
+                    }
+                    else if (item.Statut == "Transformé")
+                    {
+                        <span class="badge bg-success">Transformé</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">En attente</span>
+                    }
+                </td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info text-white">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

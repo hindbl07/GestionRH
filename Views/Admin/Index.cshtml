@@ -1,0 +1,40 @@
+﻿@model IEnumerable<GestionRH.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Gestion des utilisateurs";
+}
+
+<h2 class="mb-4">Utilisateurs</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-light">
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Rôle</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Nom</td>
+                <td>@user.Email</td>
+                <td>@user.PhoneNumber</td>
+                <td>@user.Role</td>
+                <td>
+                    <a class="btn btn-sm btn-primary" href="@Url.Action("EditRole", "Admin", new { id = user.Id })">
+                        <i class="bi bi-pencil-square"></i> Modifier
+                    </a>
+                    <form asp-action="Delete" asp-route-id="@user.Id" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Confirmer la suppression ?')">
+                            <i class="bi bi-trash"></i> Supprimer
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

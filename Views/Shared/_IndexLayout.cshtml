@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "_Layout"; // hérite du layout principal
+}
+
+<div class="container py-4">
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success shadow-sm rounded">
+            @TempData["Message"]
+        </div>
+    }
+
+    @if (IsSectionDefined("CustomAlert"))
+    {
+        @RenderSection("CustomAlert", required: false)
+    }
+
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    @if (IsSectionDefined("Filters"))
+    {
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                @RenderSection("Filters", required: false)
+            </div>
+        </div>
+    }
+
+    @if (IsSectionDefined("TopActions"))
+    {
+        <div class="mb-3 d-flex justify-content-between">
+            @RenderSection("TopActions", required: false)
+        </div>
+    }
+
+    <div class="table-responsive shadow-sm">
+        @RenderBody() <!-- Table HTML -->
+    </div>
+
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}
+

@@ -16,6 +16,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Poste> Postes { get; set; }
     public DbSet<Candidat> Candidats { get; set; }
     public DbSet<Entretien> Entretiens { get; set; }
+    public DbSet<DemandeConge> DemandesConge { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -50,7 +52,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         modelBuilder.Entity<Entretien>()
             .HasOne(e => e.Utilisateur)
             .WithMany(u => u.EntretiensPlanifies)
-            .HasForeignKey(e => e.UtilisateurId);
+            .HasForeignKey(e => e.UtilisateurId)
+            .OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.Entity<Poste>()
         .Property(p => p.SalaireBase)

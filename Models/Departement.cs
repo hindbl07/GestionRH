@@ -15,5 +15,9 @@ namespace GestionRH.Models
         public string Code { get; set; }
 
         public ICollection<Employe> Employes { get; set; } = new List<Employe>();
+
+
+        // 🔥 Cette propriété est nécessaire pour le .Include(d => d.Postes)
+        public ICollection<Poste> Postes { get; set; } = new List<Poste>();
     }
 }

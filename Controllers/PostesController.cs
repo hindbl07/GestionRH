@@ -22,7 +22,7 @@ namespace GestionRH.Controllers
         // GET: Postes
         public async Task<IActionResult> Index()
         {
-            var postes = await _context.Postes.ToListAsync();
+            var postes = await _context.Postes.Include(p => p.Departement).ToListAsync();
             Console.WriteLine("Chaîne de connexion utilisée : " + _context.Database.GetDbConnection().ConnectionString);
             Console.WriteLine($"Il y a {postes.Count} postes dans la base.");
             return View(postes);
@@ -50,6 +50,8 @@ namespace GestionRH.Controllers
         public IActionResult Create()
         {
             Console.WriteLine(">>> Affichage du formulaire Create");
+
+            ViewBag.Departements = new SelectList(_context.Departements, "Id", "Nom");
             return View();
         }
 
@@ -58,7 +60,7 @@ namespace GestionRH.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Titre,Description,SalaireBase")] Poste poste)
+        public async Task<IActionResult> Create([Bind("Id,Titre,Description,SalaireBase,DepartementId")] Poste poste)
         {
             if (ModelState.IsValid)
             {
@@ -89,6 +91,11 @@ namespace GestionRH.Controllers
                     }
                 }
             }
+            Console.WriteLine(">>> Département sélectionné : " + poste.DepartementId);
+
+
+            ViewData["DepartementId"] = new SelectList(_context.Departements, "Id", "Nom", poste.DepartementId);
+
 
             return View(poste);
         }
@@ -106,6 +113,8 @@ namespace GestionRH.Controllers
             {
                 return NotFound();
             }
+
+            ViewData["DepartementId"] = new SelectList(_context.Departements, "Id", "Nom", poste.DepartementId);
             return View(poste);
         }
 
@@ -114,7 +123,7 @@ namespace GestionRH.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Titre,Description,SalaireBase")] Poste poste)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Titre,Description,SalaireBase,DepartementId")] Poste poste)
         {
             if (id != poste.Id)
             {
@@ -141,6 +150,9 @@ namespace GestionRH.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
+            ViewData["DepartementId"] = new SelectList(_context.Departements, "Id", "Nom", poste.DepartementId);
+
             return View(poste);
         }
 

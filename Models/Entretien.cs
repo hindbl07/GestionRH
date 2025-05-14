@@ -1,6 +1,7 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using GestionRH.Models;
+
 
 namespace GestionRH.Models
 {
@@ -13,18 +14,20 @@ namespace GestionRH.Models
         [DataType(DataType.DateTime)]
         public DateTime Date { get; set; }
 
-        public string Lieu { get; set; }
+        public string Lieu { get; set; } = string.Empty;
 
-        public string Resultat { get; set; }
+        public string Resultat { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Le candidat est obligatoire.")]
-        public int CandidatId { get; set; }
+        public int? CandidatId { get; set; }
 
-        public Candidat Candidat { get; set; }
+        [ForeignKey("CandidatId")]
+        public Candidat? Candidat { get; set; }
 
-        [Required(ErrorMessage = "L'utilisateur (planificateur) est obligatoire.")]
-        public string UtilisateurId { get; set; }
+        [Required(ErrorMessage = "L'utilisateur RH est obligatoire.")]
+        public string? UtilisateurId { get; set; }
 
-        public ApplicationUser Utilisateur { get; set; }
+        [ForeignKey("UtilisateurId")]
+        public ApplicationUser? Utilisateur { get; set; }
     }
 }

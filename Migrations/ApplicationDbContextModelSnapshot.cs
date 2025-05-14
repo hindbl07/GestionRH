@@ -128,6 +128,34 @@ namespace GestionRH.Migrations
                     b.ToTable("Candidats");
                 });
 
+            modelBuilder.Entity("GestionRH.Models.DemandeConge", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateDebut")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateFin")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("EmployeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Statut")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeId");
+
+                    b.ToTable("DemandesConge");
+                });
+
             modelBuilder.Entity("GestionRH.Models.Departement", b =>
                 {
                     b.Property<int>("Id")
@@ -157,6 +185,9 @@ namespace GestionRH.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("DateDernierResetConge")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("DateEmbauche")
                         .HasColumnType("datetime2");
 
@@ -178,6 +209,13 @@ namespace GestionRH.Migrations
                     b.Property<int?>("PosteId")
                         .HasColumnType("int");
 
+                    b.Property<int>("SoldeConge")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Statut")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("DepartementId");
@@ -195,7 +233,8 @@ namespace GestionRH.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CandidatId")
+                    b.Property<int?>("CandidatId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -230,6 +269,9 @@ namespace GestionRH.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("DepartementId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -243,6 +285,8 @@ namespace GestionRH.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DepartementId");
 
                     b.ToTable("Postes");
                 });
@@ -390,6 +434,15 @@ namespace GestionRH.Migrations
                     b.Navigation("Employe");
                 });
 
+            modelBuilder.Entity("GestionRH.Models.DemandeConge", b =>
+                {
+                    b.HasOne("GestionRH.Models.Employe", "Employe")
+                        .WithMany()
+                        .HasForeignKey("EmployeId");
+
+                    b.Navigation("Employe");
+                });
+
             modelBuilder.Entity("GestionRH.Models.Employe", b =>
                 {
                     b.HasOne("GestionRH.Models.Departement", "Departement")
@@ -416,12 +469,21 @@ namespace GestionRH.Migrations
                     b.HasOne("GestionRH.Models.ApplicationUser", "Utilisateur")
                         .WithMany("EntretiensPlanifies")
                         .HasForeignKey("UtilisateurId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Candidat");
 
                     b.Navigation("Utilisateur");
+                });
+
+            modelBuilder.Entity("GestionRH.Models.Poste", b =>
+                {
+                    b.HasOne("GestionRH.Models.Departement", "Departement")
+                        .WithMany("Postes")
+                        .HasForeignKey("DepartementId");
+
+                    b.Navigation("Departement");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -488,6 +550,8 @@ namespace GestionRH.Migrations
             modelBuilder.Entity("GestionRH.Models.Departement", b =>
                 {
                     b.Navigation("Employes");
+
+                    b.Navigation("Postes");
                 });
 
             modelBuilder.Entity("GestionRH.Models.Poste", b =>

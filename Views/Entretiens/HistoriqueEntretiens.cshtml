@@ -1,0 +1,28 @@
+﻿@model List<GestionRH.Models.Entretien>
+@{
+    ViewData["Title"] = "Historique des entretiens";
+}
+
+<h2>Historique des entretiens de @ViewBag.CandidatNom</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Lieu</th>
+            <th>Résultat</th>
+            <th>Planifié par</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Date.ToString("g")</td>
+                <td>@item.Lieu</td>
+                <td>@item.Resultat</td>
+                <td>@item.Utilisateur?.UserName</td>
+            </tr>
+        }
+    </tbody>
+</table>

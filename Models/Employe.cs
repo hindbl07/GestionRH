@@ -24,6 +24,13 @@ namespace GestionRH.Models
         [DataType(DataType.Date)]
         public DateTime DateEmbauche { get; set; }
 
+
+        public int SoldeConge { get; set; } = 18; // par défaut
+
+        public DateTime DateDernierResetConge { get; set; } = DateTime.Now; // pour remise annuelle
+        public string Statut { get; set; } = string.Empty;// Par exemple : "Actif", "En congé", "Contrat terminé"
+
+
         // DepartementId et PosteId sont déjà optionnels (int?)
         public int? DepartementId { get; set; }
 
@@ -35,7 +42,19 @@ namespace GestionRH.Models
 
         // Relation avec Poste (pas de changement nécessaire)
         [ForeignKey("PosteId")]
-        public Poste? Poste { get; set; }   // Initialisation par défaut
+        public Poste? Poste { get; set; } // Initialisation par défaut
+
+
+        public void ResetSoldeCongeSiNecessaire()
+        {
+            if (DateDernierResetConge.Year < DateTime.Now.Year)
+            {
+                SoldeConge = 18;
+                DateDernierResetConge = DateTime.Now;
+            }
+        }
+
     }
+
 }
 

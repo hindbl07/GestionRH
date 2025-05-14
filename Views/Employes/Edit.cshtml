@@ -1,59 +1,76 @@
 ﻿@model GestionRH.Models.Employe
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Modifier un employé";
 }
 
-<h1>Edit</h1>
+<h2 class="mb-4"><i class="fas fa-user-edit"></i> @ViewData["Title"]</h2>
 
-<h4>Employe</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="card shadow-sm">
+    <div class="card-body">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Nom" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Nom" class="form-label"></label>
                 <input asp-for="Nom" class="form-control" />
                 <span asp-validation-for="Nom" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Matricule" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Matricule" class="form-label"></label>
                 <input asp-for="Matricule" class="form-control" readonly />
             </div>
 
-            <div class="form-group">
-                <label asp-for="EmailPro" class="control-label"></label>
+            <div class="mb-3">
+                <label asp-for="EmailPro" class="form-label"></label>
                 <input asp-for="EmailPro" class="form-control" />
                 <span asp-validation-for="EmailPro" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DateEmbauche" class="control-label"></label>
-                <input asp-for="DateEmbauche" class="form-control" />
+
+            <div class="mb-3">
+                <label asp-for="DateEmbauche" class="form-label"></label>
+                <input asp-for="DateEmbauche" class="form-control" type="date" />
                 <span asp-validation-for="DateEmbauche" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DepartementId" class="control-label"></label>
-                <select asp-for="DepartementId" class="form-control" asp-items="ViewBag.DepartementId"></select>
+
+            <div class="mb-3">
+                <label asp-for="Statut" class="form-label"></label>
+                <select asp-for="Statut" class="form-select">
+                    <option value="Actif">Actif</option>
+                    <option value="En congé">En congé</option>
+                    <option value="Contrat terminé">Contrat terminé</option>
+                </select>
+                <span asp-validation-for="Statut" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="DepartementId" class="form-label"></label>
+                <select asp-for="DepartementId" class="form-select" asp-items="ViewBag.DepartementId"></select>
                 <span asp-validation-for="DepartementId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PosteId" class="control-label"></label>
-                <select asp-for="PosteId" class="form-control" asp-items="ViewBag.PosteId"></select>
+
+            <div class="mb-3">
+                <label asp-for="PosteId" class="form-label"></label>
+                <select asp-for="PosteId" class="form-select" asp-items="ViewBag.PosteId"></select>
                 <span asp-validation-for="PosteId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+
+            <div class="d-flex gap-2">
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Retour à la liste
+                </a>
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-save"></i> Enregistrer
+                </button>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

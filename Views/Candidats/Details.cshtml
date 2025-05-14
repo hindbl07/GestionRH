@@ -1,48 +1,135 @@
 ﻿@model GestionRH.Models.Candidat
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Détails du Candidat";
 }
 
-<h1>Details</h1>
+<h2 class="mb-4"><i class="fas fa-user-circle"></i> Détails du Candidat</h2>
 
-<div>
-    <h4>Candidat</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nom)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nom)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CV)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CV)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Statut)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Statut)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Employe)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Employe.Matricule)
-        </dd>
-    </dl>
+<div class="mb-4 d-flex gap-2">
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Retour à la liste
+    </a>
+
+    @if (Model.Statut == "Accepté" && Model.EmployeId == null)
+    {
+        <a href="@Url.Action("TransformerEnEmploye", "Candidats", new { id = Model.Id })" class="btn btn-success">
+            <i class="fas fa-user-check"></i> Transformer en Employé
+        </a>
+    }
+
+    @if (Model.EmployeId != null)
+    {
+        <a asp-controller="Employes" asp-action="Details" asp-route-id="@Model.EmployeId" class="btn btn-info">
+            <i class="fas fa-id-badge"></i> Voir Employé
+        </a>
+    }
+
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">
+        <i class="fas fa-edit"></i> Modifier
+    </a>
+
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">Nom</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Nom)</dd>
+
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-3">CV</dt>
+            <dd class="col-sm-9">
+                @if (!string.IsNullOrEmpty(Model.CV))
+                {
+                    var nomFichier = System.IO.Path.GetFileName(Model.CV);
+                    <a class="btn btn-outline-primary btn-sm"
+                       href="@Url.Action("VoirCV", "Candidats", new { cvFileName = nomFichier })"
+                       target="_blank">
+                        <i class="fas fa-download"></i> Télécharger le CV
+                    </a>
+                }
+                else
+                {
+                    <span class="text-muted">Aucun CV disponible</span>
+                }
+            </dd>
+
+            <dt class="col-sm-3">Statut</dt>
+            <dd class="col-sm-9">
+                @if (Model.Statut == "Accepté")
+                {
+                    <span class="badge bg-success">@Model.Statut</span>
+                }
+                else if (Model.Statut == "Refusé")
+                {
+                    <span class="badge bg-danger">@Model.Statut</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary">@Model.Statut</span>
+                }
+            </dd>
+
+            <dt class="col-sm-3">Employé associé</dt>
+            <dd class="col-sm-9">
+                @if (Model.Employe != null)
+                {
+                    <span class="text-primary fw-semibold">@Model.Employe.Matricule</span>
+                }
+                else
+                {
+                    <span class="text-muted">Aucun</span>
+                }
+            </dd>
+        </dl>
+    </div>
 </div>
+<hr />
+<h4><i class="fas fa-comments"></i> Historique des entretiens</h4>
+
+@if (Model.Entretiens != null && Model.Entretiens.Any())
+{
+    <table class="table table-bordered table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Lieu</th>
+                <th>Résultat</th>
+                <th>Planifié par</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entretien in Model.Entretiens.OrderByDescending(e => e.Date))
+            {
+                <tr>
+                    <td>@entretien.Date.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@entretien.Lieu</td>
+                    <td>@entretien.Resultat</td>
+                    <td>@entretien.Utilisateur?.Nom</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (Model.Statut != "Accepté")
+    {
+        <a href="@Url.Action("Create", "Entretiens", new { candidatId = Model.Id })" class="btn btn-outline-primary">
+            <i class="fas fa-calendar-plus"></i> Planifier Entretien
+        </a>
+    }
+
+}
+else
+{
+    <p class="text-muted">Aucun entretien n'a encore été planifié pour ce candidat.</p>
+}
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

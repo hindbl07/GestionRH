@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GestionRH.Models
+namespace GestionRH.Models.ViewModels
 {
     public class RegisterViewModel
     {
@@ -21,5 +21,10 @@ namespace GestionRH.Models
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Les mots de passe ne correspondent pas.")]
         public string ConfirmPassword { get; set; }
+
+        // Nouveau champ pour le rôle
+        [Required]
+        [Display(Name = "Rôle")]
+        public RoleUtilisateur Role { get; set; }  // Rôle de l'utilisateur (Admin ou User)
     }
 }

@@ -1,0 +1,36 @@
+﻿@model GestionRH.Models.DemandeConge
+@{
+    ViewData["Title"] = "Supprimer la demande";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Êtes-vous sûr de vouloir supprimer cette demande ?</h4>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Employé
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Employe?.Nom
+        </dd>
+        <dt class="col-sm-2">
+            Date début
+        </dt>
+        <dd class="col-sm-10">
+            @Model.DateDebut.ToShortDateString()
+        </dd>
+        <dt class="col-sm-2">
+            Date fin
+        </dt>
+        <dd class="col-sm-10">
+            @Model.DateFin.ToShortDateString()
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+        <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+    </form>
+</div>

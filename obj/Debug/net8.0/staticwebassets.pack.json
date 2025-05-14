@@ -1,252 +1,288 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\GestionRH.bundle.scp.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\GestionRH.bundle.scp.css",
       "PackagePath": "staticwebassets\\GestionRH.su6owc3kkq.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\css\\login.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\css\\organisation.css",
+      "PackagePath": "staticwebassets\\css\\organisation.css"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\Formation pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\29fe95fa-2226-45d3-bee8-99d64c296c0d_QCM_securite_reseaux.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cv\\29fe95fa-2226-45d3-bee8-99d64c296c0d_QCM_securite_reseaux.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\33d80252-1294-432c-9b35-257c22bf9fa2_exemple_controle.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cv\\33d80252-1294-432c-9b35-257c22bf9fa2_exemple_controle.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\55bf184a-9656-407b-801d-06297908ddb1_Formation1.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cv\\55bf184a-9656-407b-801d-06297908ddb1_Formation1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\5ba78120-7886-4091-a875-29d5f985750b_Correction_controle.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cv\\5ba78120-7886-4091-a875-29d5f985750b_Correction_controle.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\6baf9bfc-ef3c-4ba4-b429-9c823d2841c1_Correction_controle.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cv\\6baf9bfc-ef3c-4ba4-b429-9c823d2841c1_Correction_controle.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\d3a47015-4db5-49c7-877c-2bebabfe79f1_exemple_controle.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cv\\d3a47015-4db5-49c7-877c-2bebabfe79f1_exemple_controle.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\fc90877e-99dd-4852-88bd-7b890b2d5dd0_Formation1.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cv\\fc90877e-99dd-4852-88bd-7b890b2d5dd0_Formation1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\exemple_controle.pdf",
+      "PackagePath": "staticwebassets\\uploads\\exemple_controle.pdf"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GestionRH.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

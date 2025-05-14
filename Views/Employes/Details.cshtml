@@ -1,54 +1,39 @@
 ﻿@model GestionRH.Models.Employe
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Détails de l'employé";
 }
 
-<h1>Details</h1>
+<h2 class="mb-4"><i class="fas fa-id-badge"></i> @ViewData["Title"]</h2>
 
-<div>
-    <h4>Employe</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nom)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nom)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Matricule)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Matricule)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EmailPro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EmailPro)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateEmbauche)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateEmbauche)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Departement)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Departement.Code)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Poste)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Poste.Titre)
-        </dd>
-    </dl>
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h4 class="card-title mb-3"><i class="fas fa-user"></i> @Model.Nom</h4>
+
+        <dl class="row">
+            <dt class="col-sm-4">Matricule</dt>
+            <dd class="col-sm-8">@Model.Matricule</dd>
+
+            <dt class="col-sm-4">Email professionnel</dt>
+            <dd class="col-sm-8">@Model.EmailPro</dd>
+
+            <dt class="col-sm-4">Date d'embauche</dt>
+            <dd class="col-sm-8">@Model.DateEmbauche.ToString("dd/MM/yyyy")</dd>
+
+            <dt class="col-sm-4">Département</dt>
+            <dd class="col-sm-8">@Model.Departement?.Code</dd>
+
+            <dt class="col-sm-4">Poste</dt>
+            <dd class="col-sm-8">@Model.Poste?.Titre</dd>
+        </dl>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="d-flex gap-2">
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Retour à la liste
+    </a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">
+        <i class="fas fa-edit"></i> Modifier
+    </a>
 </div>

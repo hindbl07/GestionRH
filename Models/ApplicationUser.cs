@@ -8,8 +8,11 @@ namespace GestionRH.Models
 {
     public enum RoleUtilisateur
     {
-        Admin,
-        User
+        [Display(Name = "Administrateur")]
+        Admin = 0,
+
+        [Display(Name = "Utilisateur")]
+        User = 1
     }
 
     public class ApplicationUser : IdentityUser

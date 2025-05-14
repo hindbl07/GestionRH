@@ -1,0 +1,163 @@
+﻿@model GestionRH.Controllers.DashboardStats
+
+@{
+    ViewData["Title"] = "Tableau de bord RH";
+}
+
+<h2 class="mb-4">Statistiques RH</h2>
+
+<div class="row g-4 mb-5">
+    <div class="col-md-3">
+        <div class="card shadow-sm text-center border-0">
+            <div class="card-body">
+                <i class="bi bi-people fs-1 text-primary"></i>
+                <h5 class="mt-3">Employés</h5>
+                <h3 class="fw-bold">@Model.TotalEmployees</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm text-center border-0">
+            <div class="card-body">
+                <i class="bi bi-building fs-1 text-success"></i>
+                <h5 class="mt-3">Départements</h5>
+                <h3 class="fw-bold">@Model.TotalDepartments</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm text-center border-0">
+            <div class="card-body">
+                <i class="bi bi-briefcase fs-1 text-warning"></i>
+                <h5 class="mt-3">Postes</h5>
+                <h3 class="fw-bold">@Model.TotalPositions</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm text-center border-0">
+            <div class="card-body">
+                <i class="bi bi-person-lines-fill fs-1 text-danger"></i>
+                <h5 class="mt-3">Candidats</h5>
+                <h3 class="fw-bold">@Model.TotalCandidates</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row g-4 mb-5">
+    <!-- Premier graphique : Doughnut -->
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0 text-center">
+            <div class="card-body">
+                <h5 class="card-title mb-4">Répartition globale</h5>
+                <canvas id="dashboardChart" style="max-width: 100%; height: 350px;"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deuxième graphique : Barres -->
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0 text-center">
+            <div class="card-body">
+                <h5 class="card-title mb-4">Données RH détaillées</h5>
+                <canvas id="secondChart" style="max-width: 100%; height: 350px;"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script>
+        const ctx = document.getElementById('dashboardChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Employés', 'Départements', 'Postes', 'Candidats', 'Recrutés'],
+                datasets: [{
+                    label: 'Données RH',
+                    data: [
+                        @Model.TotalEmployees,
+                        @Model.TotalDepartments,
+                        @Model.TotalPositions,
+                        @Model.TotalCandidates,
+                        @Model.TotalRecruited
+                    ],
+                    backgroundColor: [
+                        '#0d6efd', // Bleu (Employés)
+                        '#198754', // Vert (Départements)
+                        '#ffc107', // Jaune (Postes)
+                        '#dc3545', // Rouge (Candidats)
+                        '#0dcaf0'  // Cyan (Recrutés)
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    title: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Deuxième graphique (barres)
+        const secondCtx = document.getElementById('secondChart').getContext('2d');
+        const secondChart = new Chart(secondCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Employés', 'Départements', 'Postes', 'Candidats', 'Recrutés'],
+                datasets: [{
+                    label: 'Effectif',
+                    data: [
+                        @Model.TotalEmployees,
+                        @Model.TotalDepartments,
+                        @Model.TotalPositions,
+                        @Model.TotalCandidates,
+                        @Model.TotalRecruited
+                    ],
+                    backgroundColor: [
+                        '#0d6efd',
+                        '#198754',
+                        '#ffc107',
+                        '#dc3545',
+                        '#0dcaf0'
+                    ],
+                    borderColor: '#dee2e6',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+}

@@ -5,12 +5,14 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using GestionRH.Data;
 using GestionRH.Models;
 using System.Diagnostics;
+using Microsoft.Extensions.DependencyInjection;
+using GestionRH.Services;
 
 namespace GestionRH;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +36,9 @@ public class Program
         .AddDefaultTokenProviders();
 
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+        // Ajout du service MatriculeService
+        builder.Services.AddScoped<MatriculeService>();  // Ligne ajoutée
+
 
         // Filtre global : tous les contrôleurs exigent une authentification
         builder.Services.AddControllersWithViews(options =>
@@ -60,6 +65,22 @@ public class Program
 
         var app = builder.Build();
 
+        // Ajout de rôles au démarrage de l'application
+        var scope = app.Services.CreateScope();
+        var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+       
+        var roles = new string[] { RoleUtilisateur.Admin.ToString(), RoleUtilisateur.User.ToString() };
+
+        foreach (var role in roles)
+        {
+            var roleExist = await roleManager.RoleExistsAsync(role);
+            if (!roleExist)
+            {
+                await roleManager.CreateAsync(new IdentityRole(role));
+            }
+        }
+
         // Gestion des erreurs
         if (app.Environment.IsDevelopment())
         {
@@ -77,6 +98,7 @@ public class Program
 
         app.UseRouting();
 
+
         app.UseAuthentication();
         app.UseAuthorization();
 
@@ -84,9 +106,11 @@ public class Program
         app.UseStatusCodePagesWithRedirects("/Account/Login?returnUrl={0}");
 
         // Routes
+        // Bonne route par défaut : vers Dashboard
         app.MapControllerRoute(
             name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}");
+            pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+
 
         app.MapRazorPages();
 

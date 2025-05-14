@@ -1,41 +1,55 @@
 ﻿@model IEnumerable<GestionRH.Models.Departement>
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml"; // C'est ça la clé !
+    ViewData["Title"] = "Liste des départements";
 }
 
-<h1>Index</h1>
+@section CustomAlert {
+    @if (TempData["DepartementCree"] != null)
+    {
+        <div class="alert alert-success">
+            Département créé : <strong>@TempData["DepartementCree"]</strong>
+        </div>
+    }
+}
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+@section TopActions {
+    <a asp-action="Create" class="btn btn-success">
+        <i class="fas fa-user-plus"></i> Ajouter un département
+    </a>
+}
+
+@section Filters {
+    <form method="get" asp-action="Index" class="row g-3">
+        <!-- champs de filtre ici -->
+    </form>
+}
+
+<!-- Le tableau des données -->
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Code)
-            </th>
-            <th></th>
+            <th>Nom</th>
+            <th>Code</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Code)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nom</td>
+                <td>@item.Code</td>
+               
+                <td>
+                    <div class="btn-group">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

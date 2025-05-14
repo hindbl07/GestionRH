@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using GestionRH.Models;
+using GestionRH.Models.ViewModels;
 
 namespace GestionRH.Controllers;
 

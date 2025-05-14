@@ -3,70 +3,140 @@
 @{
     ViewData["Title"] = "Index";
 }
-@if (TempData["MatriculeCree"] != null)
-{
-    <div class="alert alert-success">
-        Employé créé avec le matricule : <strong>@TempData["MatriculeCree"]</strong>
+
+<div class="container py-4">
+
+    @if (TempData["MatriculeCree"] != null)
+    {
+        <div class="alert alert-success shadow-sm rounded">
+             Employé créé avec le matricule : <strong>@TempData["MatriculeCree"]</strong>
+        </div>
+    }
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success shadow-sm rounded">
+             @TempData["Message"]
+        </div>
+    }
+
+    <h2 class="mb-4">Liste des employés</h2>
+
+    @if (!string.IsNullOrEmpty(Context.Request.Query["search"]))
+    {
+        <p>🔍 Résultats pour : <strong>@Context.Request.Query["search"]</strong></p>
+    }
+
+    @if (!string.IsNullOrEmpty(Context.Request.Query["departementId"]) || !string.IsNullOrEmpty(Context.Request.Query["posteId"]))
+    {
+        <p>
+            Filtres appliqués :
+            @if (!string.IsNullOrEmpty(Context.Request.Query["departementId"]))
+            {
+                <span class="badge bg-info text-dark me-2"> Département ID = @Context.Request.Query["departementId"]</span>
+            }
+            @if (!string.IsNullOrEmpty(Context.Request.Query["posteId"]))
+            {
+                <span class="badge bg-info text-dark"> Poste ID = @Context.Request.Query["posteId"]</span>
+            }
+        </p>
+    }
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <form method="get" asp-action="Index" class="row g-3">
+                <div class="col-md-4">
+                    <input type="text" name="search" value="@ViewData["Search"]" class="form-control" placeholder="Rechercher par nom, email..." />
+                </div>
+                <div class="col-md-3">
+                    <select name="departementId" class="form-select" asp-items="ViewBag.DepartementId">
+                        <option value="">-- Tous les départements --</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select name="posteId" class="form-select" asp-items="ViewBag.PosteId">
+                        <option value="">-- Tous les postes --</option>
+                    </select>
+                </div>
+                <div class="col-md-2 d-grid">
+                    <button type="submit" class="btn btn-primary">Filtrer</button>
+                </div>
+            </form>
+        </div>
     </div>
-}
+    
+    <div class="mb-3 d-flex justify-content-between">
+        <a asp-action="Create" class="btn btn-success">
+            <i class="fas fa-user-plus"></i> Créer un nouveau Employé
+        </a>
+        <a asp-action="ExportCsv" class="btn btn-outline-primary">
+            <i class="fas fa-file-csv"></i> Exporter les employés
+        </a>
+    </div>
 
 
-<h1>Index</h1>
+    <div class="table-responsive shadow-sm">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Nom)</th>
+                    <th>@Html.DisplayNameFor(model => model.Matricule)</th>
+                    <th>@Html.DisplayNameFor(model => model.EmailPro)</th>
+                    <th>@Html.DisplayNameFor(model => model.DateEmbauche)</th>
+                    <th>@Html.DisplayNameFor(model => model.Statut)</th>
+                    <th>@Html.DisplayNameFor(model => model.Departement)</th>
+                    <th>@Html.DisplayNameFor(model => model.Poste)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Nom)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Matricule)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EmailPro)</td>
+                        <td>@item.DateEmbauche.ToString("dd/MM/yyyy")</td>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Matricule)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmailPro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateEmbauche)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Departement)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Poste)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Matricule)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailPro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateEmbauche)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Departement.Code)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Poste.Titre)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                        <td>
+                            @{
+                                var statut = item.Statut?.Trim().ToLower();
+                            }
+
+                            @switch (statut)
+                            {
+                                case "actif":
+                                    <span class="badge bg-success">Actif</span>
+                                    break;
+                                case "en congé":
+                                    <span class="badge bg-warning text-dark">En congé</span>
+                                    break;
+                                case "contrat terminé":
+                                    <span class="badge bg-danger">Contrat terminé</span>
+                                    break;
+                                default:
+                                    <span class="badge bg-secondary">Inconnu</span>
+                                    break;
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.Departement.Nom)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Poste.Titre)</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info text-white">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

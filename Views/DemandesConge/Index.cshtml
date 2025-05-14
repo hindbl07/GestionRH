@@ -1,0 +1,70 @@
+﻿@model IEnumerable<GestionRH.Models.DemandeConge>
+
+@{
+    Layout = "~/Views/Shared/_IndexLayout.cshtml"; // C'est ça la clé !
+    ViewData["Title"] = "Liste des congés";
+}
+
+@section CustomAlert {
+    @if (TempData["CongéCree"] != null)
+    {
+        <div class="alert alert-success">
+            Candidat créé : <strong>@TempData["CongéCree"]</strong>
+        </div>
+    }
+}
+
+@section TopActions {
+    <a asp-action="Create" class="btn btn-success">
+        <i class="fas fa-user-plus"></i> Ajouter un congé
+    </a>
+}
+
+@section Filters {
+    <form method="get" asp-action="Index" class="row g-3">
+        <!-- champs de filtre ici -->
+    </form>
+}
+
+<!-- Le tableau des données -->
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
+        <tr>
+            <th>Employé</th>
+            <th>Date début</th>
+            <th>Date fin</th>
+            <th>Durée</th>
+            <th>Statut</th>
+            <th>Solde</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Employe?.Nom</td>
+                <td>@item.DateDebut.ToShortDateString()</td>
+                <td>@item.DateFin.ToShortDateString()</td>
+                <td>@item.Duree</td>
+                <td>@item.Statut</td>
+                <td>@item.Employe?.SoldeConge</td>
+                <td>
+                    @if (item.Statut == "En attente")
+                    {
+                        <a asp-action="Approuver" asp-route-id="@item.Id" class="btn btn-success btn-sm">Approuver</a>
+                        <a asp-action="Refuser" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Refuser</a>
+                    }
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">Supprimer</a>
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
