@@ -17,6 +17,7 @@ using GestionRH.Migrations;
 
 namespace GestionRH.Controllers
 {
+    [Authorize]
     public class CandidatsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -53,7 +54,7 @@ namespace GestionRH.Controllers
                 return NotFound();
             }
             return View(candidat);
-            
+
         }
 
 
@@ -101,7 +102,8 @@ namespace GestionRH.Controllers
                 {
                     Nom = model.Nom,
                     Email = model.Email,
-                    CV = "uploads/cv/" + uniqueFileName // chemin relatif depuis wwwroot
+                    CV = "uploads/cv/" + uniqueFileName, // chemin relatif depuis wwwroot
+                    Statut = "En attente"
                 };
 
                 _context.Add(candidat);
@@ -363,12 +365,12 @@ namespace GestionRH.Controllers
                 .ToListAsync();
 
             var builder = new StringBuilder();
-            builder.AppendLine("Nom,Email,Statut,CV,EmployeMatricule");
+            builder.AppendLine("Nom | Email | Statut | CV | EmployeMatricule");
 
             foreach (var c in candidats)
             {
                 var matricule = c.Employe?.Matricule ?? ""; // Affiche le matricule de l'employé s’il existe
-                builder.AppendLine($"{c.Nom},{c.Email},{c.Statut},{c.CV},{matricule}");
+                builder.AppendLine($"{c.Nom} | {c.Email} | {c.Statut} | {c.CV} | {matricule}");
             }
 
             return File(Encoding.UTF8.GetBytes(builder.ToString()), "text/csv", "candidats.csv");

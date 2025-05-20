@@ -58,5 +58,10 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         modelBuilder.Entity<Poste>()
         .Property(p => p.SalaireBase)
         .HasPrecision(18, 2); // 18 chiffres au total, dont 2 après la virgule
+
+
+
     }
 }
+
+

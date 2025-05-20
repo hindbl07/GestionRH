@@ -72,10 +72,19 @@ namespace GestionRH.Controllers
                 .Include(e => e.Departement)
                 .Include(e => e.Poste)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (employe == null)
             {
                 return NotFound();
             }
+
+            // Récupérer les demandes de congés de cet employé sans navigation dans Employe
+            var demandesConge = await _context.DemandesConge
+                .Where(dc => dc.EmployeId == id)
+                .OrderByDescending(dc => dc.DateDebut)
+                .ToListAsync();
+
+            ViewBag.DemandesConge = demandesConge;
 
             return View(employe);
         }
@@ -223,13 +232,26 @@ namespace GestionRH.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var employe = await _context.Employes.FindAsync(id);
-            if (employe != null)
+            // Récupérer les demandes de congé liées à cet employé (sans navigation dans Employe)
+            var demandesConge = await _context.DemandesConge
+                .Where(dc => dc.EmployeId == id)
+                .ToListAsync();
+
+            if (demandesConge.Any())
             {
-                _context.Employes.Remove(employe);
+                // Supprimer toutes ces demandes avant de supprimer l'employé
+                _context.DemandesConge.RemoveRange(demandesConge);
             }
 
+            var employe = await _context.Employes.FindAsync(id);
+            if (employe == null)
+            {
+                return NotFound();
+            }
+
+            _context.Employes.Remove(employe);
             await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 

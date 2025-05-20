@@ -10,6 +10,9 @@
     <div class="col-md-8 col-lg-6">
         <form asp-action="Edit" enctype="multipart/form-data">
             <input type="hidden" asp-for="Id" />
+
+            <!-- Champ caché pour Statut -->
+            <input type="hidden" asp-for="Statut" />
             <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
             <div class="mb-3">

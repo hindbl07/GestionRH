@@ -93,14 +93,13 @@
                 <a class="nav-link" href="/Organisation/Hierarchie"><i class="bi bi-diagram-3 me-2"></i>Organisation</a>
             </li>
 
-            @if (User.IsInRole("Admin"))
-            {
-                <li class="nav-item">
-                    <a class="nav-link" href="/Admin/Dashboard">
-                        <i class="bi bi-shield-lock me-2"></i>Administration
-                    </a>
-                </li>
-            }
+            <li class="nav-item">
+                <a class="nav-link" href="/Admin/Index">
+                    <i class="bi bi-shield-lock me-2"></i>Administration
+                </a>
+            </li>
+            
+            
 
         </ul>
     </div>

@@ -37,3 +37,39 @@
         <i class="fas fa-edit"></i> Modifier
     </a>
 </div>
+
+
+<div class="d-flex gap-2">
+     <h3>Historique des demandes de congés</h3>
+
+        @if (ViewBag.DemandesConge != null && ((List<GestionRH.Models.DemandeConge>)ViewBag.DemandesConge).Any())
+        {
+            var demandes = (List<GestionRH.Models.DemandeConge>)ViewBag.DemandesConge;
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Date début</th>
+                        <th>Date fin</th>
+                        <th>Durée (jours)</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var demande in demandes)
+                    {
+                        <tr>
+                            <td>@demande.DateDebut.ToString("dd/MM/yyyy")</td>
+                            <td>@demande.DateFin.ToString("dd/MM/yyyy")</td>
+                            <td>@demande.Duree</td>
+                            <td>@demande.Statut</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Aucune demande de congé pour cet employé.</p>
+        }
+
+</div>

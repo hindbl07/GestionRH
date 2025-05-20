@@ -36,12 +36,6 @@
         <span asp-validation-for="CandidatId" class="text-danger"></span>
     </div>
 
-    <div class="form-group mb-3">
-        <label asp-for="UtilisateurId" class="form-label">Utilisateur RH</label>
-        <select asp-for="UtilisateurId" class="form-select" asp-items="ViewBag.UtilisateurId"></select>
-        <span asp-validation-for="UtilisateurId" class="text-danger"></span>
-    </div>
-
     <button type="submit" class="btn btn-primary">Planifier</button>
     <a asp-action="Index" class="btn btn-secondary">Annuler</a>
 </form>

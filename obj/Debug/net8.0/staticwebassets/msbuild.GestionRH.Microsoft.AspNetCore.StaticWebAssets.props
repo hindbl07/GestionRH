@@ -1170,6 +1170,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cv\33d80252-1294-432c-9b35-257c22bf9fa2_exemple_controle.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cv\4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>GestionRH</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/GestionRH</BasePath>
+      <RelativePath>uploads/cv/4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rio9zexbpy</Fingerprint>
+      <Integrity>Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cv\4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cv\55bf184a-9656-407b-801d-06297908ddb1_Formation1.pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>GestionRH</SourceId>
@@ -1241,6 +1259,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cv\d3a47015-4db5-49c7-877c-2bebabfe79f1_exemple_controle.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cv\f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>GestionRH</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/GestionRH</BasePath>
+      <RelativePath>uploads/cv/f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rio9zexbpy</Fingerprint>
+      <Integrity>Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cv\f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cv\fc90877e-99dd-4852-88bd-7b890b2d5dd0_Formation1.pdf'))">
       <SourceType>Package</SourceType>

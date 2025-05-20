@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sydwVwjctW1j7iE33kUthkXlNn3CqaEpFXwt46tk4OA=",
+  "Hash": "hL/ojLKl5yrrDAhAO8yz9OGnwzVfjiLkHSVAbFU4Kic=",
   "Source": "GestionRH",
   "BasePath": "_content/GestionRH",
   "Mode": "Default",
@@ -2663,6 +2663,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\cv\\33d80252-1294-432c-9b35-257c22bf9fa2_exemple_controle.pdf"
     },
     {
+      "Identity": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV.pdf",
+      "SourceId": "GestionRH",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\",
+      "BasePath": "_content/GestionRH",
+      "RelativePath": "uploads/cv/4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rio9zexbpy",
+      "Integrity": "Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\cv\\4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV.pdf"
+    },
+    {
       "Identity": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\55bf184a-9656-407b-801d-06297908ddb1_Formation1.pdf",
       "SourceId": "GestionRH",
       "SourceType": "Discovered",
@@ -2745,6 +2766,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\cv\\d3a47015-4db5-49c7-877c-2bebabfe79f1_exemple_controle.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV.pdf",
+      "SourceId": "GestionRH",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\",
+      "BasePath": "_content/GestionRH",
+      "RelativePath": "uploads/cv/f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rio9zexbpy",
+      "Integrity": "Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\cv\\f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV.pdf"
     },
     {
       "Identity": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\fc90877e-99dd-4852-88bd-7b890b2d5dd0_Formation1.pdf",
@@ -2895,7 +2937,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 23:30:03 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2940,7 +2982,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 23:30:03 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10281,7 +10323,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 11:37:22 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10318,7 +10360,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 11:37:22 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10363,7 +10405,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 15:24:32 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10400,7 +10442,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 15:24:32 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10419,6 +10461,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-acCWc198fehwLmG3xkfm7HiQV40bHZIzblB3NqrtIDM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cv/4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV.pdf",
+      "AssetFile": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1139775"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 09:41:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cv/4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV.rio9zexbpy.pdf",
+      "AssetFile": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1139775"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 09:41:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rio9zexbpy"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/cv/4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w="
         }
       ]
     },
@@ -10445,7 +10569,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:14:12 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10490,7 +10614,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:14:12 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10527,7 +10651,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:51:03 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10572,7 +10696,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:51:03 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10609,7 +10733,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 12:03:17 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10654,7 +10778,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 12:03:17 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10691,7 +10815,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 15:55:30 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10728,7 +10852,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 15:55:30 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10747,6 +10871,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-acCWc198fehwLmG3xkfm7HiQV40bHZIzblB3NqrtIDM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cv/f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV.pdf",
+      "AssetFile": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1139775"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 12:34:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cv/f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV.rio9zexbpy.pdf",
+      "AssetFile": "C:\\Users\\Hp\\Desktop\\pfa\\GestionRH\\GestionRH\\wwwroot\\uploads\\cv\\f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1139775"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 12:34:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rio9zexbpy"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/cv/f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y6/ry5c36+ZFSc6Y5rQn0bZXgXgiL0ToSSCEiWK/D9w="
         }
       ]
     },
@@ -10773,7 +10979,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:02 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10818,7 +11024,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:02 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10855,7 +11061,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 14:10:13 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10892,7 +11098,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 14:10:13 GMT"
+          "Value": "Mon, 19 May 2025 17:22:38 GMT"
         },
         {
           "Name": "Cache-Control",

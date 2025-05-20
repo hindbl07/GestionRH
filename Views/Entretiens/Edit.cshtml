@@ -13,6 +13,9 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="UtilisateurId" /> <!-- Assigner automatiquement, pas modifiable -->
+
+
             <div class="form-group">
                 <label asp-for="Date" class="control-label"></label>
                 <input asp-for="Date" class="form-control" />
@@ -23,20 +26,20 @@
                 <input asp-for="Lieu" class="form-control" />
                 <span asp-validation-for="Lieu" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Resultat" class="control-label"></label>
-                <input asp-for="Resultat" class="form-control" />
+            <div class="form-group mb-3">
+                <label asp-for="Resultat" class="form-label"></label>
+                <select asp-for="Resultat" class="form-select">
+                    <option value="">-- Sélectionner un résultat --</option>
+                    <option>En attente</option>
+                    <option>Accepté</option>
+                    <option>Refusé</option>
+                </select>
                 <span asp-validation-for="Resultat" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CandidatId" class="control-label"></label>
                 <select asp-for="CandidatId" class="form-control" asp-items="ViewBag.CandidatId"></select>
                 <span asp-validation-for="CandidatId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UtilisateurId" class="control-label"></label>
-                <select asp-for="UtilisateurId" class="form-control" asp-items="ViewBag.UtilisateurId"></select>
-                <span asp-validation-for="UtilisateurId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

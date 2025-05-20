@@ -62,9 +62,11 @@ wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 wwwroot\uploads\cv\29fe95fa-2226-45d3-bee8-99d64c296c0d_QCM_securite_reseaux.pdf
 wwwroot\uploads\cv\33d80252-1294-432c-9b35-257c22bf9fa2_exemple_controle.pdf
+wwwroot\uploads\cv\4f38f46c-5435-468c-a931-a0246d82ce81_candidat_CV.pdf
 wwwroot\uploads\cv\55bf184a-9656-407b-801d-06297908ddb1_Formation1.pdf
 wwwroot\uploads\cv\5ba78120-7886-4091-a875-29d5f985750b_Correction_controle.pdf
 wwwroot\uploads\cv\6baf9bfc-ef3c-4ba4-b429-9c823d2841c1_Correction_controle.pdf
 wwwroot\uploads\cv\d3a47015-4db5-49c7-877c-2bebabfe79f1_exemple_controle.pdf
+wwwroot\uploads\cv\f2418c6e-49ca-4446-91c7-0ca14860588c_candidat_CV.pdf
 wwwroot\uploads\cv\fc90877e-99dd-4852-88bd-7b890b2d5dd0_Formation1.pdf
 wwwroot\uploads\exemple_controle.pdf

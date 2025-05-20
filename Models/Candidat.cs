@@ -10,13 +10,13 @@ namespace GestionRH.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Le nom est obligatoire.")]
-        public string Nom { get; set; }
+        public string Nom { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "L'email est obligatoire.")]
         [EmailAddress(ErrorMessage = "Format d'email invalide.")]
-        public string Email { get; set; } 
+        public string Email { get; set; } = string.Empty;
 
-        public string CV { get; set; }  // Chemin ou base64
+        public string CV { get; set; } = string.Empty;  // Chemin ou base64
 
         public string Statut { get; set; } = "En attente"; // Statut du candidat (En attente, Accepté, Refusé)
 

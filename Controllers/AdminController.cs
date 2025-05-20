@@ -9,7 +9,7 @@ using GestionRH.Models.ViewModels;
 
 namespace GestionRH.Controllers
 {
-    [Authorize(Roles = "Admin")] // Seul un admin peut accéder à ce contrôleur
+    [Authorize] // Seul un admin peut accéder à ce contrôleur
     public class AdminController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

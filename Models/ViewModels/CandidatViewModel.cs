@@ -22,8 +22,8 @@ namespace GestionRH.Models.ViewModels
         public string? CVActuel { get; set; } // Pour afficher un lien vers le CV actuel
 
 
-        [Required]
-        public string Statut { get; set; }
+        public string? Statut { get; set; } = null;
+
 
         // Indique si on est en création ou en édition
         public bool EstCreation { get; set; }

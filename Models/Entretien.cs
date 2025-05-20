@@ -24,8 +24,7 @@ namespace GestionRH.Models
         [ForeignKey("CandidatId")]
         public Candidat? Candidat { get; set; }
 
-        [Required(ErrorMessage = "L'utilisateur RH est obligatoire.")]
-        public string? UtilisateurId { get; set; }
+        public string UtilisateurId { get; set; } = String.Empty;
 
         [ForeignKey("UtilisateurId")]
         public ApplicationUser? Utilisateur { get; set; }

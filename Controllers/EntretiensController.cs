@@ -9,9 +9,11 @@ using GestionRH.Data;
 using GestionRH.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GestionRH.Controllers
 {
+    [Authorize]
     public class EntretiensController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -80,28 +82,35 @@ namespace GestionRH.Controllers
         // POST: Entretiens/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Date,Lieu,Resultat,CandidatId,UtilisateurId")] Entretien entretien)
+        public async Task<IActionResult> Create([Bind("Date,Lieu,Resultat,CandidatId")] Entretien entretien)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(entretien);
+                // Récupérer l'utilisateur RH connecté
+                var userId = _userManager.GetUserId(User); // Cela va récupérer l'ID de l'utilisateur actuellement connecté
+                entretien.UtilisateurId = userId;  // Assigner l'ID de l'utilisateur RH à l'entretien
 
-                // Mettre à jour le statut du candidat si résultat = Accepté ou Refusé
+                _context.Add(entretien);  // Ajouter l'entretien au context
+                // Mettre à jour le statut du candidat (si besoin)
                 var candidat = await _context.Candidats.FindAsync(entretien.CandidatId);
                 if (candidat != null)
                 {
-                    if (entretien.Resultat == "Accepté")
-                        candidat.Statut = "Accepté";
-                    else if (entretien.Resultat == "Refusé")
-                        candidat.Statut = "Refusé";
+                    if (entretien.Resultat == "Accepté" || entretien.Resultat == "Refusé")
+                    {
+                        candidat.Statut = entretien.Resultat;
+                        _context.Candidats.Update(candidat);
+                    }
                 }
 
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();  // Sauvegarder les modifications
+                TempData["EntretienCree"] = "L'entretien a bien été créé.";  // Message temporaire
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["CandidatId"] = new SelectList(_context.Candidats, "Id", "Nom", entretien.CandidatId);
+            // Recharger les listes pour la vue en cas d'erreur
+            ViewData["CandidatId"] = new SelectList(_context.Candidats.Where(c => c.Statut == "En attente"), "Id", "Nom", entretien.CandidatId);
 
+            // Liste des utilisateurs RH (rôle = User) pour la vue (si nécessaire)
             var utilisateursRH = await _userManager.Users
                 .Where(u => u.Role == RoleUtilisateur.User)
                 .ToListAsync();
@@ -125,17 +134,24 @@ namespace GestionRH.Controllers
             {
                 return NotFound();
             }
-            ViewData["CandidatId"] = new SelectList(_context.Candidats, "Id", "Email", entretien.CandidatId);
-            ViewData["UtilisateurId"] = new SelectList(_context.Users, "Id", "Nom", entretien.UtilisateurId);
+
+            // Récupérer l'utilisateur RH connecté pour afficher son nom
+            var utilisateurConnecte = await _userManager.GetUserAsync(User);
+            ViewData["UtilisateurNom"] = utilisateurConnecte?.Nom;
+
+            // Recharger les listes
+            ViewData["CandidatId"] = new SelectList(_context.Candidats, "Id", "Nom", entretien.CandidatId);
+
             return View(entretien);
         }
+
 
         // POST: Entretiens/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Lieu,Resultat,CandidatId,UtilisateurId")] Entretien entretien)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Lieu,Resultat,CandidatId")] Entretien entretien)
         {
             if (id != entretien.Id)
             {
@@ -146,10 +162,14 @@ namespace GestionRH.Controllers
             {
                 try
                 {
-                    // Mettre à jour l’entretien
+                    // Assigner l'ID de l'utilisateur RH connecté
+                    var userId = _userManager.GetUserId(User);
+                    entretien.UtilisateurId = userId;  // Assigner l'ID de l'utilisateur connecté
+
+                    // Mettre à jour l'entretien
                     _context.Update(entretien);
 
-                    // Mettre à jour le statut du candidat lié
+                    // Mettre à jour le statut du candidat
                     var candidat = await _context.Candidats.FindAsync(entretien.CandidatId);
                     if (candidat != null)
                     {
@@ -176,11 +196,13 @@ namespace GestionRH.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            // Recharger les listes en cas d'erreur
-            ViewData["CandidatId"] = new SelectList(_context.Candidats, "Id", "Email", entretien.CandidatId);
-            ViewData["UtilisateurId"] = new SelectList(_context.Users, "Id", "Nom", entretien.UtilisateurId);
+            // En cas d'erreur, recharger les données
+            ViewData["CandidatId"] = new SelectList(_context.Candidats, "Id", "Nom", entretien.CandidatId);
             return View(entretien);
         }
+
+
+
 
         // GET: Entretiens/Delete/5
         public async Task<IActionResult> Delete(int? id)
